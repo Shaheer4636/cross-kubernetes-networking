@@ -45,7 +45,7 @@ This figure describes the full infrastructure deployment pipeline. It is compose
 
 ## Internal VM Architecture
 
-![Inside VM Architecture](./inside-vm-ff.drawio.png)
+![Inside VM Architecture](./diagrams/inside-vm-ff.drawio.png)
 
 This figure outlines the internal network subsystem stack of a single node. The architecture draws on core Linux networking primitives layered with userland routing and orchestration components.
 
@@ -77,11 +77,6 @@ All userland components (OVS, OVN, FRR, K3s) are installed via `.deb` packages o
    * `frr_bgp_autosetup.sh` configures BGP neighbors by inspecting local routing info.
 3. K3s is bootstrapped with Flannel CNI.
 4. A sample nginx pod is deployed to verify pod-to-pod reachability.
-5. Route propagation is validated using:
-
-   ```bash
-   vtysh -c "show ip bgp summary"
-   ```
 
 ---
 
@@ -92,6 +87,14 @@ All userland components (OVS, OVN, FRR, K3s) are installed via `.deb` packages o
 * Nginx pods in one region can be reached via their CNI subnet from the other region.
 * The system demonstrates viability of cloud-native cross-regional mesh networking using open protocols.
 
+
+* Route propagation is validated using:
+
+   ```bash
+   vtysh -c "show ip bgp summary"
+   ```
+![west region node](./diagrams/west-node.jpeg)
+![east region node](./diagrams/east-node.jpeg)
 ---
 
 ## Relevance to Scientific Computing
@@ -117,10 +120,10 @@ This architecture mimics the **hybrid compute environment** found in grid comput
 
 ## Future Work
 
-* Integrate monitoring (e.g., Prometheus exporters for FRR and OVN).
+* Integrate monitoring (Prometheus exporters for FRR and OVN).
 * Deploy real-world multi-service applications across both clusters.
 * Simulate failure scenarios and observe BGP route convergence.
 
 ## Authors & Credits
 
-Demonstrated by \Muhammad Shaheer with intention to demonstrate **poc for cross region k8s pods communication** 
+Demonstrated by Muhammad Shaheer with intention to demonstrate **poc for cross region k8s pods communication** 
