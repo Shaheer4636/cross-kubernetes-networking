@@ -21,7 +21,7 @@ This project’s primary focus is not container orchestration alone, but rather 
 
 ## AWS-Level Topology
 
-![AWS Network Architecture](./networking-aws-arch.drawio.png)
+![AWS Network Architecture](./diagrams/networking-aws-arch.drawio%20(1).png)
 
 This figure describes the full infrastructure deployment pipeline. It is composed of two isolated VPCs, each hosting a single Ubuntu-based EC2 instance configured as a Kubernetes control node. Key characteristics:
 
@@ -123,4 +123,4 @@ This architecture mimics the **hybrid compute environment** found in grid comput
 
 ## Authors & Credits
 
-Built by \[Muhammad Shaheer] with intention to demonstrate **poc for cross region k8s pods communication** 
+Demonstrated by \Muhammad Shaheer with intention to demonstrate **poc for cross region k8s pods communication** 
