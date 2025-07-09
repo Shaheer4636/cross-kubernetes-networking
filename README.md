@@ -73,7 +73,7 @@ All userland components (OVS, OVN, FRR, K3s) are installed via `.deb` packages o
 1. **Terraform** provisions both networks, security groups, EC2s, and key-pairs.
 2. On each EC2 instance:
 
-   * `post-install.sh` installs required components and seeds configuration files.
+   * `post-install.sh` installs required components and seeds configuration files. [Read More here](post-install.md)
    * `frr_bgp_autosetup.sh` configures BGP neighbors by inspecting local routing info.
 3. K3s is bootstrapped with Flannel CNI.
 4. A sample nginx pod is deployed to verify pod-to-pod reachability.
