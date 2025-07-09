@@ -51,7 +51,7 @@ This figure outlines the internal network subsystem stack of a single node. The 
 
 ### Layered Stack (Bottom to Top)
 
-1. **Ubuntu 22.04 LTS** – OS layer; stable base for reproducible builds. [Study more] (https://aws.amazon.com/marketplace/pp/prodview-f2if34z3a4e3i)
+1. **Ubuntu 22.04 LTS** – OS layer; stable base for reproducible builds. [Study more](https://aws.amazon.com/marketplace/pp/prodview-f2if34z3a4e3i)
 2. **ON5S (Linux kernel networking)** – Handles interfaces, routing tables, and IP stack.
 3. **Open vSwitch (OVS)** – L2/L3 programmable virtual switch; acts as the dataplane for OVN.
 4. **TCP** – Transport layer used for OVN and FRR communications.
