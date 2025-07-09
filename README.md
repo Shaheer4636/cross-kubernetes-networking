@@ -30,7 +30,7 @@ This figure describes the full infrastructure deployment pipeline. It is compose
 * **Security Groups**: Permit essential ports for:
 
   * SSH (`22`)
-  * FRR BGP (`179`)
+  * FRR BGP [Ports on BGP](https://www.noction.com/blog/bgp-states) (`179`)
   * OVN southbound (`6641`) and northbound (`6642`) databases
 * **EC2 Instances**:
 
@@ -55,12 +55,12 @@ This figure outlines the internal network subsystem stack of a single node. The 
 2. **ON5S (Linux kernel networking)** – Handles interfaces, routing tables, and IP stack.
 3. **Open vSwitch (OVS)** – L2/L3 programmable virtual switch; acts as the dataplane for OVN.
 4. **TCP** – Transport layer used for OVN and FRR communications.
-5. **Control Daemons**:
+5. **Control Daemons** [Read More](https://daipayanadhikari.hashnode.dev/controlling-services-and-daemons):
 
    * **OVN** – Manages logical switches and routers.
    * **FRR (BGP)** – Establishes route exchange between remote nodes.
    * **K3s** – Lightweight Kubernetes, used to run container workloads.
-6. **Nginx Pod** – A simple Kubernetes pod used to validate cross-VPC reachability.
+6. **Nginx Pod** [Create nginx pod](https://kodekloud.com/community/t/creating-nginx-pod-to-work-on-port-other-than-80/436477) – A simple Kubernetes pod used to validate cross-VPC reachability.
 
 ### Installation Notes
 
@@ -74,7 +74,7 @@ All userland components (OVS, OVN, FRR, K3s) are installed via `.deb` packages o
 2. On each EC2 instance:
 
    * `post-install.sh` installs required components and seeds configuration files. [Read More here](post-install.md)
-   * `frr_bgp_autosetup.sh` configures BGP neighbors by inspecting local routing info.
+   * `frr_bgp_autosetup.sh` configures BGP neighbors by inspecting local routing info. [Read More her](frr_bgp_autosetup.md)
 3. K3s is bootstrapped with Flannel CNI.
 4. A sample nginx pod is deployed to verify pod-to-pod reachability.
 
