@@ -125,5 +125,5 @@ This architecture mimics the **hybrid compute environment** found in grid comput
 * Simulate failure scenarios and observe BGP route convergence.
 
 ## Authors & Credits
-**Demonstrated by [Muhammad Shaheer](https://www.linkedin.com/in/muhammad-shaheer4636/)** with the intention to demonstrate a **PoC for cross-region Kubernetes pod communication**.
+**Demonstrated by [Muhammad Shaheer](https://www.linkedin.com/in/muhammad-shaheer4636/)** with the intention to demonstrate a **PoC for cross-region Kubernetes pod communication**. If you want to contribute more to this, create a pull request and add your refrence then create an MR.
 
